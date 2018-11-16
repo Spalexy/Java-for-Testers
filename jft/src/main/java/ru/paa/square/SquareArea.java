@@ -1,7 +1,0 @@
-package ru.paa.square;
-
-public class SquareArea {
-  public static void main(String[] args){
-    System.out.println("3");
-  }
-}
