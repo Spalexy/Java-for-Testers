@@ -16,14 +16,14 @@ public class CustomerCreationTest {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void testCustomerCreation() throws Exception {
     driver.get("http://localhost/litecart/admin/login.php");
     driver.findElement(By.name("username")).sendKeys("admin");
     driver.findElement(By.name("password")).sendKeys("admin");
     driver.findElement(By.name("login")).click();
+  }
+
+  @Test
+  public void testCustomerCreation() throws Exception {
     driver.findElement(By.xpath("//span[contains(text(),'Customers')]")).click();
     driver.findElement(By.linkText("Add New Customer")).click();
     driver.findElement(By.name("code")).click();
