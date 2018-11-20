@@ -5,9 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/jft.iml" filepath="$PROJECT_DIR$/.idea/modules/jft.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/jft_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jft_main.iml" group="jft" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/jft_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jft_test.iml" group="jft" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests_main.iml" group="litecart-customers-web-tests" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/litecart-customers-web-tests_test.iml" group="litecart-customers-web-tests" />
     </modules>
   </component>
 </project>
