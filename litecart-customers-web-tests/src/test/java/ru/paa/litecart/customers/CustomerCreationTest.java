@@ -16,6 +16,10 @@ public class CustomerCreationTest {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    login();
+  }
+
+  private void login() {
     driver.get("http://localhost/litecart/admin/login.php");
     driver.findElement(By.name("username")).sendKeys("admin");
     driver.findElement(By.name("password")).sendKeys("admin");
@@ -24,8 +28,17 @@ public class CustomerCreationTest {
 
   @Test
   public void testCustomerCreation() throws Exception {
-    driver.findElement(By.xpath("//span[contains(text(),'Customers')]")).click();
-    driver.findElement(By.linkText("Add New Customer")).click();
+    goToCustomersPage();
+    initCustomerCreation();
+    fillNewCustomerForm();
+    submitForm();
+  }
+
+  private void submitForm() {
+    driver.findElement(By.name("save")).click();
+  }
+
+  private void fillNewCustomerForm() {
     driver.findElement(By.name("code")).click();
     driver.findElement(By.name("code")).sendKeys("test");
     driver.findElement(By.name("email")).click();
@@ -52,7 +65,15 @@ public class CustomerCreationTest {
     driver.findElement(By.name("mobile")).sendKeys("1234567");
     driver.findElement(By.name("new_password")).click();
     driver.findElement(By.name("new_password")).sendKeys("test");
-    driver.findElement(By.name("save")).click();
+  }
+
+  private void initCustomerCreation() {
+    driver.findElement(By.linkText("Add New Customer")).click();
+  }
+
+
+  private void goToCustomersPage() {
+    driver.findElement(By.xpath("//span[contains(text(),'Customers')]")).click();
   }
 
   @AfterClass(alwaysRun = true)
