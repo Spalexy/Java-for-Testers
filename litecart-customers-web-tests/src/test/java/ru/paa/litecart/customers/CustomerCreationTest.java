@@ -16,13 +16,13 @@ public class CustomerCreationTest {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    login();
+    login("admin", "admin");
   }
 
-  private void login() {
+  private void login(String username, String password) {
     driver.get("http://localhost/litecart/admin/login.php");
-    driver.findElement(By.name("username")).sendKeys("admin");
-    driver.findElement(By.name("password")).sendKeys("admin");
+    driver.findElement(By.name("username")).sendKeys(username);
+    driver.findElement(By.name("password")).sendKeys(password);
     driver.findElement(By.name("login")).click();
   }
 
