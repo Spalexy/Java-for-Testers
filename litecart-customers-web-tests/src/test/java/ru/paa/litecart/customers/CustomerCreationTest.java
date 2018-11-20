@@ -30,9 +30,11 @@ public class CustomerCreationTest {
   public void testCustomerCreation() throws Exception {
     goToCustomersPage();
     initCustomerCreation();
-    fillNewCustomerForm("test", "test@test.ru", "test", "test",
-            "test", "test", "test", "test", "test",
-            "test", "1234567", "1234567", "test");
+    fillNewCustomerForm(
+            new CustomerData("test", "test@test.ru", "test",
+                    "test", "test", "test", "test",
+                    "test", "test", "test", "1234567",
+                    "1234567", "test"));
     submitForm();
   }
 
@@ -40,35 +42,33 @@ public class CustomerCreationTest {
     driver.findElement(By.name("save")).click();
   }
 
-  private void fillNewCustomerForm(String code, String email, String taxId, String company, String firstname,
-                                   String lastname, String address1, String address2, String city, String postcode,
-                                   String phone, String mobile, String password) {
+  private void fillNewCustomerForm(CustomerData customerData) {
     driver.findElement(By.name("code")).click();
-    driver.findElement(By.name("code")).sendKeys(code);
+    driver.findElement(By.name("code")).sendKeys(customerData.getCode());
     driver.findElement(By.name("email")).click();
-    driver.findElement(By.name("email")).sendKeys(email);
+    driver.findElement(By.name("email")).sendKeys(customerData.getEmail());
     driver.findElement(By.name("tax_id")).click();
-    driver.findElement(By.name("tax_id")).sendKeys(taxId);
+    driver.findElement(By.name("tax_id")).sendKeys(customerData.getTaxId());
     driver.findElement(By.name("company")).click();
-    driver.findElement(By.name("company")).sendKeys(company);
+    driver.findElement(By.name("company")).sendKeys(customerData.getCompany());
     driver.findElement(By.name("firstname")).click();
-    driver.findElement(By.name("firstname")).sendKeys(firstname);
+    driver.findElement(By.name("firstname")).sendKeys(customerData.getFirstname());
     driver.findElement(By.name("lastname")).click();
-    driver.findElement(By.name("lastname")).sendKeys(lastname);
+    driver.findElement(By.name("lastname")).sendKeys(customerData.getLastname());
     driver.findElement(By.name("address1")).click();
-    driver.findElement(By.name("address1")).sendKeys(address1);
+    driver.findElement(By.name("address1")).sendKeys(customerData.getAddress1());
     driver.findElement(By.name("address2")).click();
-    driver.findElement(By.name("address2")).sendKeys(address2);
+    driver.findElement(By.name("address2")).sendKeys(customerData.getAddress2());
     driver.findElement(By.name("city")).click();
-    driver.findElement(By.name("city")).sendKeys(city);
+    driver.findElement(By.name("city")).sendKeys(customerData.getCity());
     driver.findElement(By.name("postcode")).click();
-    driver.findElement(By.name("postcode")).sendKeys(postcode);
+    driver.findElement(By.name("postcode")).sendKeys(customerData.getPostcode());
     driver.findElement(By.name("phone")).click();
-    driver.findElement(By.name("phone")).sendKeys(phone);
+    driver.findElement(By.name("phone")).sendKeys(customerData.getPhone());
     driver.findElement(By.name("mobile")).click();
-    driver.findElement(By.name("mobile")).sendKeys(mobile);
+    driver.findElement(By.name("mobile")).sendKeys(customerData.getMobile());
     driver.findElement(By.name("new_password")).click();
-    driver.findElement(By.name("new_password")).sendKeys(password);
+    driver.findElement(By.name("new_password")).sendKeys(customerData.getPassword());
   }
 
   private void initCustomerCreation() {
