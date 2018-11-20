@@ -19,7 +19,7 @@ public class CustomerCreationTest {
   }
 
   @Test
-  public void testUntitledTestCase() throws Exception {
+  public void testCustomerCreation() throws Exception {
     driver.get("http://localhost/litecart/admin/login.php");
     driver.findElement(By.name("username")).sendKeys("admin");
     driver.findElement(By.name("password")).sendKeys("admin");
