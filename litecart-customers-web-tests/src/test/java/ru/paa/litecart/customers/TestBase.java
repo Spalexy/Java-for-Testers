@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-  private WebDriver driver;
+  public WebDriver driver;
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
@@ -66,8 +66,17 @@ public class TestBase {
     driver.findElement(By.xpath("//span[contains(text(),'Customers')]")).click();
   }
 
+  protected void editCustomer() {
+    driver.findElement(By.cssSelector("i.fa.fa-pencil")).click();
+  }
+
+  protected void deleteCustomer() {
+    driver.findElement(By.name("delete")).click();
+  }
+
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
     driver.quit();
   }
+
 }
