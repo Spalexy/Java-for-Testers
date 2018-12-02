@@ -6,9 +6,9 @@ public class CustomerDeletionTest extends TestBase {
 
   @Test
   public void testCustomerDeletion() {
-    goToCustomersPage();
-    editCustomer();
-    deleteCustomer();
+    app.goToCustomersPage();
+    app.editCustomer();
+    app.deleteCustomer();
   }
 
 
