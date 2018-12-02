@@ -1,4 +1,4 @@
-package ru.paa.litecart.customers;
+package ru.paa.litecart.customers.model;
 
 public class CustomerData {
   private final String code;

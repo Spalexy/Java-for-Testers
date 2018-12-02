@@ -1,6 +1,7 @@
-package ru.paa.litecart.customers;
+package ru.paa.litecart.customers.tests;
 
 import org.testng.annotations.Test;
+import ru.paa.litecart.customers.model.CustomerData;
 
 public class CustomerCreationTest extends TestBase {
 

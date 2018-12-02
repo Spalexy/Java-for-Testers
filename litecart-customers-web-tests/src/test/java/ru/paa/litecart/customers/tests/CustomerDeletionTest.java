@@ -1,4 +1,4 @@
-package ru.paa.litecart.customers;
+package ru.paa.litecart.customers.tests;
 
 import org.testng.annotations.Test;
 

@@ -1,7 +1,8 @@
-package ru.paa.litecart.customers;
+package ru.paa.litecart.customers.tests;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import ru.paa.litecart.customers.appmanager.ApplicationManager;
 
 public class TestBase {
 

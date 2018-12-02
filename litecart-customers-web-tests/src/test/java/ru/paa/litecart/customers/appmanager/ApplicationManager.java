@@ -1,15 +1,16 @@
-package ru.paa.litecart.customers;
+package ru.paa.litecart.customers.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.paa.litecart.customers.model.CustomerData;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
   public WebDriver driver;
 
-  protected void init() {
+  public void init() {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     login("admin", "admin");
@@ -22,11 +23,11 @@ public class ApplicationManager {
     driver.findElement(By.name("login")).click();
   }
 
-  protected void submitForm() {
+  public void submitForm() {
     driver.findElement(By.name("save")).click();
   }
 
-  protected void fillNewCustomerForm(CustomerData customerData) {
+  public void fillNewCustomerForm(CustomerData customerData) {
     driver.findElement(By.name("code")).click();
     driver.findElement(By.name("code")).sendKeys(customerData.getCode());
     driver.findElement(By.name("email")).click();
@@ -55,23 +56,23 @@ public class ApplicationManager {
     driver.findElement(By.name("new_password")).sendKeys(customerData.getPassword());
   }
 
-  protected void initCustomerCreation() {
+  public void initCustomerCreation() {
     driver.findElement(By.linkText("Add New Customer")).click();
   }
 
-  protected void goToCustomersPage() {
+  public void goToCustomersPage() {
     driver.findElement(By.xpath("//span[contains(text(),'Customers')]")).click();
   }
 
-  protected void editCustomer() {
+  public void editCustomer() {
     driver.findElement(By.cssSelector("i.fa.fa-pencil")).click();
   }
 
-  protected void deleteCustomer() {
+  public void deleteCustomer() {
     driver.findElement(By.name("delete")).click();
   }
 
-  protected void stop() {
+  public void stop() {
     driver.quit();
   }
 }
